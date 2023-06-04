@@ -41,8 +41,9 @@ const predictFileName = (os) => {
 
 const predictUrl = (version, os) => {
 	const fileName = predictFileName(os);
-	const url = `https://archive.mozilla.org/pub/firefox/releases/${
-		version}/jsshell/jsshell-${fileName}.zip`;
+	const url = version.includes('a1') ?
+		`https://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central/jsshell-${fileName}.zip` : // nightly (mozilla-central)
+		`https://archive.mozilla.org/pub/firefox/releases/${version}/jsshell/jsshell-${fileName}.zip`; // releases
 	return url;
 };
 
