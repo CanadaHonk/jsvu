@@ -19,6 +19,7 @@ const getLatestVersion = async () => {
 	const url = 'https://api.github.com/repos/oracle/graaljs/releases/latest';
 	const response = await get(url, {
 		json: true,
+		headers: { 'Authorization': 'Bearer ' + process.env.GITHUB_TOKEN }
 	});
 	const data = response.body;
 	const version = data.tag_name.slice(3); // Strip `vm-` prefix.
