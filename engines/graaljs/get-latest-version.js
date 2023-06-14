@@ -22,7 +22,7 @@ const getLatestVersion = async () => {
 		headers: { 'Authorization': 'Bearer ' + process.env.GITHUB_TOKEN }
 	});
 	const data = response.body;
-	const version = data.tag_name.slice(3); // Strip `vm-` prefix.
+	const version = data.tag_name.slice(6); // Strip `graal-` prefix.
 	return version;
 };
 
