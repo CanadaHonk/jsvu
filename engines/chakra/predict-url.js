@@ -36,8 +36,7 @@ const predictFileName = (os) => {
 
 const predictUrl = (version, os) => {
 	const fileName = predictFileName(os);
-	const url = `https://aka.ms/chakracore/cc_${fileName}_${
-		version.replace(/\./g, '_')}`;
+	const url = `https://chakra-core.shortdev.de/releases/v${version.replace(/\./g, '_')}/cc_${fileName}_${version.replace(/\./g, '_')}.tar.gz`;
 	return url;
 };
 
