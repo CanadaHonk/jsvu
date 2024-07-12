@@ -16,17 +16,7 @@
 const get = require('../../shared/get.js');
 
 const getLatestVersion = (os) => {
-	const url = 'https://aka.ms/chakracore/version';
-	return new Promise(async (resolve, reject) => {
-		try {
-			const response = await get(url);
-			const body = response.body;
-			const version = body.trimEnd().replace(/_/g, '.');
-			resolve(version);
-		} catch (error) {
-			reject(error);
-		}
-	});
+	return '1.11.24';
 };
 
 module.exports = getLatestVersion;
